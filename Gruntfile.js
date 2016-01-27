@@ -8,6 +8,8 @@ module.exports = function(grunt) {
 			
 		pkg: grunt.file.readJSON('package.json'),
 		
+		dirs: grunt.file.readJSON('dirs.json'),
+				
 		readDeployNumber: function() {
 
 			var numberFile = '.deployrc';
@@ -25,7 +27,7 @@ module.exports = function(grunt) {
 			return number;
 		},
 		
-		onWatch:  function(action, filepath) {
+		onWatch: function(action, filepath) {
 			
 			var pattern = new RegExp(/\\/g);
 			filepath = filepath.replace(pattern, '/');
@@ -51,15 +53,6 @@ module.exports = function(grunt) {
 			grunt.config('copy.files.dest', dest);
 		},
 		
-		dirs: {
-			srcBase: 'Web-Server/',
-			distBase: 'D:/java-practise/tools/jboss/server/web-jboss-eap-4.3_CP08/jboss-as/server/ec/deploy/jboss-web.deployer/ROOT.war',
-			maps: {
-				'css/': 'css_%s/',
-				'js/':	'js_%s/'
-			}
-		},
-		
 		watch: {
 			livereload: {
 				options: {
@@ -76,7 +69,6 @@ module.exports = function(grunt) {
 			}
 		},
 		
-		//Overrideinheritedtaskconfig
 		browserify: {
 			dev: {
 				src: ['js/*.js'],

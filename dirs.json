@@ -1,0 +1,8 @@
+{
+	"srcBase": "Web-Server/",
+	"distBase": "D: /java-practise/tools/jboss/server/web-jboss-eap-4.3_CP08/jboss-as/server/ec/deploy/jboss-web.deployer/ROOT.war",
+	"maps": {
+		"css/": "css_%s/",
+		"js/": "js_%s/"
+	}
+}
